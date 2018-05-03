@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     vim \
     ssh \
     && rm -rf /var/lib/apt/lists/*
-RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-src.tar.gz 
+RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-src.tar.gz
 RUN tar -xvzf hadoop-2.7.2.tar.gz
 RUN tar -xvzf protobuf-2.5.0.tar.gz
 RUN tar -xvzf apache-tez-0.9.0-src.tar.gz
@@ -24,6 +24,7 @@ RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
 RUN cat tmp/hdfs-site.xml > ~/hadoop/etc/hadoop/hdfs-site.xml
 RUN cat tmp/fair-scheduler.xml > ~/hadoop/etc/fair-scheduler.xml
 RUN cat tmp/mapred-site.xml > ~/hadoop/etc/hadoop/mapred-site.xml
+RUN mv tmp/slaves ~/hadoop/etc/hadoop/slaves
 RUN chmod +x /tmp/setup.sh
 RUN chmod +x /etc/bootstrap.sh
 RUN chmod +x /tmp/master-node.sh
