@@ -1,0 +1,28 @@
+
+
+# download tez jars
+RUN wget http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-src.tar.gz 
+RUN tar -xvzf apache-tez-0.9.0-src.tar.gz
+RUN cd apache-tez-0.9.0-src
+RUN mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true
+RUN cd ..
+
+mkdir ~/hadoop/tez_jars
+tar -xvzf apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0-minimal.tar.gz -C ~hadoop/tez_jars
+
+
+export HADOOP_CLASSPATH=hadoop/etc/tez:hadoop/tez_jars/*:hadoop/tez_jars/lib/*
+
+# upload to hadoop
+
+hadoop/bin/hadoop dfs -mkdir /apps
+hadoop/bin/hadoop dfs -mkdir /apps/tez
+hadoop/bin/hadoop dfs -copyFromLocal apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0.tar.gz /apps/tez/
+
+
+mkdir hadoop/etc/tez
+
+ 
+
+
+
