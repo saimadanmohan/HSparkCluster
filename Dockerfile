@@ -27,6 +27,7 @@ RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
 RUN cat tmp/hdfs-site.xml > ~/hadoop/etc/hadoop/hdfs-site.xml
 RUN cat tmp/fair-scheduler.xml > ~/hadoop/etc/fair-scheduler.xml
 RUN cat tmp/mapred-site.xml > ~/hadoop/etc/hadoop/mapred-site.xml
+RUN cat tmp/yarn-site.xml > ~/hadoop/etc/hadoop/yarn-site.xml
 RUN mv tmp/slaves ~/hadoop/etc/hadoop/slaves
 RUN chmod +x /tmp/setup.sh
 RUN chmod +x /etc/bootstrap.sh
