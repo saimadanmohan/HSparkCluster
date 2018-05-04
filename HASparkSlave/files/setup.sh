@@ -9,5 +9,9 @@ echo export HADOOP_CONF_DIR=~/hadoop/etc/hadoop >> ~/.bashrc;
 echo export YARN_CONF_DIR=~/hadoop/etc/hadoop >> ~/.bashrc;
 source ~/.bashrc
 echo -e "$javapath\n$(cat $hadoop_envfile)" > $hadoop_envfile
-mkdir /dev/hdfs
-chmod 777 /dev/hdfs
+#mkdir /dev/hdfs
+#chmod 777 /dev/hdfs
+mkdir -p /data/hdfs/namenode
+mkdir -p /data/hdfs/datanode
+mkdir -p /data/logs/hadoop
+chmod -R 777 /data

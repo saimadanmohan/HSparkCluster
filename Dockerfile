@@ -23,6 +23,7 @@ RUN mv protobuf-2.5.0 ~/protobuf-2.5.0
 RUN rm hadoop-2.7.2.tar.gz protobuf-2.5.0.tar.gz apache-tez-0.9.0-src.tar.gz
 COPY files /tmp
 RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
+RUN cp  ~/hadoop/etc/hadoop/* ~/hadoop/
 RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
 RUN cat tmp/hdfs-site.xml > ~/hadoop/etc/hadoop/hdfs-site.xml
 RUN cat tmp/fair-scheduler.xml > ~/hadoop/etc/fair-scheduler.xml
@@ -33,6 +34,7 @@ RUN chmod +x /tmp/setup.sh
 RUN chmod +x /etc/bootstrap.sh
 RUN chmod +x /tmp/master-node.sh
 RUN /tmp/setup.sh
+VOLUME /data
 #RUN cp /tmp/id_rsa ~/.ssh/
 #RUN cp /tmp/id_rsa.pub ~/.ssh/
 #RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys;

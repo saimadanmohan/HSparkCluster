@@ -10,10 +10,10 @@
     <value>131072</value>
   </property>
 
-  <property>
+  <!--property>
     <name>hadoop.tmp.dir</name>
     <value>/dev/hdfs</value>
-  </property>
+  </property-->
 </configuration>
 
 
