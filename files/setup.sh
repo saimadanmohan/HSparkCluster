@@ -1,7 +1,7 @@
 #!/bin/bash
 javapath="export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
 hadoop_envfile=~/hadoop/etc/hadoop/hadoop-env.sh
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/ >> ~/.bashrc
+echo JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/ >> ~/.bashrc
 echo export HADOOP_PREFIX=~/hadoop >> ~/.bashrc;
 echo export HADOOP_YARN_HOME=~/hadoop >> ~/.bashrc;
 echo export HADOOP_HOME=~/hadoop >> ~/.bashrc;
