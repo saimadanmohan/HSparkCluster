@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>  <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://masternode:9000/</value>
+    <value>hdfs://ctl:9000/</value>
   </property>
 
   <property>

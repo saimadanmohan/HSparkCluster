@@ -2,7 +2,7 @@
 <configuration>
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>masternode</value>
+    <value>ctl</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.class</name>
