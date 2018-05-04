@@ -8,6 +8,8 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     wget \
     vim \
     ssh \
+    curl \
+    net-tools \
     openssh-server \
     && rm -rf /var/lib/apt/lists/*
 RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-src.tar.gz
