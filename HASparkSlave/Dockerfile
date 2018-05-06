@@ -41,6 +41,11 @@ RUN chmod +x /tmp/master-node.sh
 RUN chmod +x /tmp/spark-setup.sh
 RUN /tmp/setup.sh
 VOLUME /data
+
+RUN apt-get update && \
+    apt-get install -y --force-yes software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get install -y  python2.7
 #RUN cp /tmp/id_rsa ~/.ssh/
 #RUN cp /tmp/id_rsa.pub ~/.ssh/
 #RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys;
