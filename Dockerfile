@@ -34,9 +34,9 @@ RUN mv hadoop-2.7.2 ~/hadoop
 RUN mv protobuf-2.5.0 ~/protobuf-2.5.0
 RUN rm hadoop-2.7.2.tar.gz protobuf-2.5.0.tar.gz apache-tez-0.9.0-src.tar.gz spark-2.0.2-bin-hadoop2.7.tg
 
-RUN mkdir ~/hadoop/tez_jars
-RUN tar -xvzf ~/apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0-minimal.tar.gz -C ~/hadoop/tez_jars
-
+#RUN mkdir ~/hadoop/tez_jars
+RUN tar -xvzf ~/apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0-minimal.tar.gz -C tez_jars
+RUN mv tez_jars ~/hadoop/tez_jars
 COPY files /tmp
 RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
 RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
