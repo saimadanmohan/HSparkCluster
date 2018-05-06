@@ -3,16 +3,24 @@ LABEL maintainer="AMSG2"
 
 USER root
 
-RUN apt-get update -y && apt-get install -y --no-install-recommends \
-    openjdk-8-jdk \
-    wget \
-    vim \
-    ssh \
-    curl \
-    net-tools \
-    openssh-server \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && \
+        apt-get install -y --force-yes software-properties-common && \
+        add-apt-repository ppa:deadsnakes/ppa && \
+        apt-get update -y && \
+        apt-get install -y --no-install-recommends \
+        python2.7 \
+        openjdk-8-jdk \
+        wget \
+        vim \
+        ssh \
+        curl \
+        net-tools \
+        openssh-server \
+        build-essential \
+        git \
+        maven
+
+
 RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz http://mirror.navercorp.com/apache/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz
 RUN tar -xvzf hadoop-2.7.2.tar.gz
 #RUN tar -xvzf protobuf-2.5.0.tar.gz
