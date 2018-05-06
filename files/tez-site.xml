@@ -7,7 +7,7 @@
          <property>
               <description>URL for where the Tez UI is hosted</description>
               <name>tez.tez-ui.history-url.base</name>
-              <value>http://ctl:9999/tez-ui/</value>
+              <value>http://128.110.155.21:9999/tez-ui/</value>
          </property>
     </configuration>
 
