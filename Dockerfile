@@ -39,7 +39,7 @@ RUN mkdir ~/hadoop/etc/tez
 #RUN tar -xvzf ~/apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0-minimal.tar.gz -C  ~/hadoop/tez_jars
 #RUN mv tez_jars ~/hadoop/tez_jars
 COPY files /tmp
-RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
+#RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
 RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
 RUN cat tmp/hdfs-site.xml > ~/hadoop/etc/hadoop/hdfs-site.xml
 RUN cat tmp/fair-scheduler.xml > ~/hadoop/etc/fair-scheduler.xml
@@ -50,7 +50,7 @@ RUN mv tmp/slaves ~/hadoop/etc/hadoop/slaves
 RUN mv tmp/spark-slaves ~/spark/conf/slaves 
 RUN cat tmp/spark-defaults.conf > ~/spark/conf/spark-defaults.conf
 RUN chmod +x /tmp/setup.sh
-RUN chmod +x /etc/bootstrap.sh
+#RUN chmod +x /etc/bootstrap.sh
 RUN chmod +x /tmp/master-node.sh
 RUN chmod +x /tmp/tez-script.sh
 RUN chmod +x /tmp/spark-setup.sh
@@ -63,11 +63,13 @@ RUN /tmp/hibench-setup.sh
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
 RUN /tmp/tez-script.sh
 RUN tar -xvzf ~/apache-tez-0.9.0-src/tez-dist/target/tez-0.9.0-minimal.tar.gz -C  ~/hadoop/tez_jars
-RUN mv tez_jars ~/hadoop/tez_jars
+#RUN mv tez_jars ~/hadoop/tez_jars
 VOLUME /data
 #RUN cp /tmp/id_rsa ~/.ssh/
 #RUN cp /tmp/id_rsa.pub ~/.ssh/
 #RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys;
 #RUN echo 'StrictHostKeyChecking no' >> ~/.ssh/config
+RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
+RUN chmod +x /etc/bootstrap.sh
 CMD ["/etc/bootstrap.sh", "-d"]
 

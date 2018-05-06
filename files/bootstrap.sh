@@ -7,6 +7,11 @@ chmod 400 ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys;
 echo 'StrictHostKeyChecking no' > ~/.ssh/config
 service ssh start
+
+hadoopclasspath="export HADOOP_CLASSPATH=~/Hadoop/etc/tez:hadoop/tez_jars/*:hadoop/tez_jars/lib/*"
+hadoop_envfile=~/hadoop/etc/hadoop/hadoop-env.sh
+echo -e "$hadoopclasspath\n$(cat $hadoop_envfile)" > $hadoop_envfile
+
 /tmp/master-node.sh
 #/tmp/tez-script.sh
 /tmp/spark-setup.sh
