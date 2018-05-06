@@ -2,7 +2,7 @@
     <configuration>
          <property>
              <name>tez.lib.uris</name>
-             <value>hdfs://ctl:9000//apps/tez/tez-0.9.0.tar.gz</value>
+             <value>hdfs://128.110.155.21:9000//apps/tez/tez-0.9.0.tar.gz</value>
          </property>
          <property>
               <description>URL for where the Tez UI is hosted</description>

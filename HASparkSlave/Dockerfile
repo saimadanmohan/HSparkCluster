@@ -13,18 +13,18 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     openssh-server \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
-RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-src.tar.gz http://mirror.navercorp.com/apache/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz
+RUN wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz http://mirror.navercorp.com/apache/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz
 RUN tar -xvzf hadoop-2.7.2.tar.gz
-RUN tar -xvzf protobuf-2.5.0.tar.gz
-RUN tar -xvzf apache-tez-0.9.0-src.tar.gz
+#RUN tar -xvzf protobuf-2.5.0.tar.gz
+#RUN tar -xvzf apache-tez-0.9.0-src.tar.gz
 RUN tar -xvzf spark-2.0.2-bin-hadoop2.7.tgz
 
 RUN mv spark-2.0.2-bin-hadoop2.7 ~/spark
-RUN mv apache-tez-0.9.0-src ~/apache-tez-0.9.0-src
+#RUN mv apache-tez-0.9.0-src ~/apache-tez-0.9.0-src
 #RUN mv hadoop-2.7.2/etc/hadoop/mapred-site.xml.template hadoop-2.7.2/etc/hadoop/apred-site.xml
 RUN mv hadoop-2.7.2 ~/hadoop
-RUN mv protobuf-2.5.0 ~/protobuf-2.5.0
-RUN rm hadoop-2.7.2.tar.gz protobuf-2.5.0.tar.gz apache-tez-0.9.0-src.tar.gz spark-2.0.2-bin-hadoop2.7.tgz
+#RUN mv protobuf-2.5.0 ~/protobuf-2.5.0
+RUN rm hadoop-2.7.2.tar.gz  spark-2.0.2-bin-hadoop2.7.tgz
 COPY files /tmp
 RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
 RUN cat tmp/core-site.xml >  ~/hadoop/etc/hadoop/core-site.xml
