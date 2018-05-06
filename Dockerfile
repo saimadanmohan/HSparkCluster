@@ -61,4 +61,8 @@ VOLUME /data
 
 RUN cat tmp/bootstrap.sh >  /etc/bootstrap.sh
 RUN chmod +x /etc/bootstrap.sh
+RUN add-apt-repository ppa:deadsnakes/ppa \
+    apt-get update \
+    apt-get install python2.7 \
+
 CMD ["/etc/bootstrap.sh", "-d"]
