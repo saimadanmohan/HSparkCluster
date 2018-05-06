@@ -14,6 +14,7 @@ echo -e "$hadoopclasspath\n$(cat $hadoop_envfile)" > $hadoop_envfile
 
 /tmp/master-node.sh
 #/tmp/tez-script.sh
+SPARK_HOME=~/spark
 /tmp/spark-setup.sh
 #/tmp/hibench-setup.sh
 ~/hadoop/bin/hadoop dfs -mkdir /apps
