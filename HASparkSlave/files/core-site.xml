@@ -3,7 +3,7 @@
 <configuration>
 <property>
 <name>fs.defaultFS</name>
-<value>hdfs://128.110.155.21:9000/</value>
+<value>hdfs://ctl:9000/</value>
 </property>
 <property>
 <name>io.file.buffer.size</name>

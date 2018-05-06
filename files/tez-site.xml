@@ -2,12 +2,12 @@
 <configuration>
 <property>
 <name>tez.lib.uris</name>
-<value>hdfs://128.110.155.21:9000//apps/tez/tez-0.9.0.tar.gz</value>
+<value>hdfs://ctl:9000//apps/tez/tez-0.9.0.tar.gz</value>
 </property>
 <property>
 <description>URL for where the Tez UI is hosted</description>
 <name>tez.tez-ui.history-url.base</name>
-<value>http://128.110.155.21:9999/tez-ui/</value>
+<value>http://ctl:9999/tez-ui/</value>
 </property>
 </configuration>
 

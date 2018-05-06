@@ -2,7 +2,7 @@
 <configuration>
 <property>
 <name>yarn.resourcemanager.hostname</name>
-<value>128.110.155.21</value>
+<value>ctl</value>
 </property>
 <property>
 <name>yarn.resourcemanager.scheduler.class</name>
